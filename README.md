@@ -1,3 +1,3 @@
-# HTM-CSS-JavaScript-project
+# HTM-CSS-JavaScript mini project
 
 
