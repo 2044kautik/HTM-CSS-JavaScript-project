@@ -1,0 +1,35 @@
+    body{
+   
+    background-image: url('https://thumbs.dreamstime.com/z/bmi-body-mass-index-formula-notepad-54833161.jpg');
+    background-repeat: no-repeat;
+background-size: cover;
+}
+#kks{
+    background-color:white;
+    font-style:italic;
+}
+#sss{
+    background-color: white;
+}
+.container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: black;
+
+}
+.container1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:black ;
+}
+.container2{
+    display: flex;
+    justify-content: left;
+    align-items: center;
+    color:black ;
+}
+.mainContainer{
+margin: 10%;
+}

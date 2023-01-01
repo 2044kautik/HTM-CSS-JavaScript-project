@@ -1,0 +1,99 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="validation.js"></script>
+</head>
+<body>
+    <h1 class="container"><strong>Welcome to BMI Calculator App</strong></h1>
+        <div  class="mainContainer">
+            <div class="container">
+                <label for="height"><strong>Height :<strong></label>
+                <input type="number" name="height" id="height" required> &nbsp; CM  
+            </div>
+            <br>
+            <div class="container">
+                <label for="weight">Weight :</label>
+                <input type="number" name="weight" id="weight" required>  &nbsp; KG
+            </div>
+            <br>
+            <div class="container">
+             
+                <input value ='submit' type="button" id="submit" onclick="calculateBMi()">
+            </div>
+            <div class="container1">
+                <p id="result"></p>
+            </div>
+            <br>
+            <div class="container2">
+                <h3 id="resultStatus"></h3>
+            </div>
+
+            
+        </div>
+        <div  class="container">
+            <table border="1" >
+                <thead id="kks">
+                    <th>
+                        <strong>BMI
+                        </strong>
+                    </th> 
+                    <th>
+                        <strong>Status</strong>
+                    </th>
+                </thead>
+                <tbody id="sss">
+                    <tr>
+                        <td><strong>Below 18.4<strong></td>
+                        <td><strong>Underweight</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Above 18.5 and Below 24.9<strong> </td>
+                        <td><strong>Normal</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Above 25 and Below 39.9</strong> </td>
+                        <td><strong>Overweight</strong></td>
+                    </tr>
+                    <tr>
+                        <td><strong>Above 40</strong></td>
+                        <td><strong>Obase</strong></td>
+                    </tr>
+                </tbody>
+            </table>
+    
+        </div> 
+     <script>
+        function calculateBMi(){
+            var height = document.getElementById('height').value
+            var weight = document.getElementById('weight').value
+            // console.log(height,weight)
+            var c =  weight / ((height/100) * (height/100)).toFixed(2)
+            var d = (Math.round(c * 100) / 100).toFixed(2);
+           // console.log(d)
+           var status =''
+            document.getElementById('result').innerText = 'BMI is:' +d
+            if(d<=18.5 ){
+                status='Underweight'
+            }
+            else if(d>=18.5 && d<25){
+                status='Normal'
+            }
+            else if(d>=25 && d<=39.9){
+                status='Overweight'
+            }
+            else{
+                status='Obase'
+            }
+            document.getElementById('resultStatus').innerText = 'Result Staus is: You are ' +status
+
+            
+
+        }
+     </script>
+    </div>
+</body>
+</html>
